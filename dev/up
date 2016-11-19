@@ -1,0 +1,10 @@
+#!/bin/bash
+
+STATUS=$(dinghy status | grep VM: | awk '{print $2}')
+
+if [ "$STATUS" != "running" ]; then
+    dinghy up --no-proxy
+fi
+
+docker-compose pull
+docker-compose up -d --force-recreate
