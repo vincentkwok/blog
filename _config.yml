@@ -22,3 +22,6 @@ markdown: kramdown
 
 # custom post uri
 permalink: :year/:month/:title/
+
+exclude:
+  - dev
